@@ -740,3 +740,24 @@ button:focus {
 .fork-btn-inner::after {
   display: none !important;
 }
+
+
+.project-card-view {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-card-view .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+}

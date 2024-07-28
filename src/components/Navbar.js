@@ -41,7 +41,7 @@ function NavBar() {
           <svg className="img-fluid logo"
             xmlns="http://www.w3.org/2000/svg"
             width="2222"
-            height="2500"
+            height="1600"
             preserveAspectRatio="xMidYMid"
             viewBox="0 -1.428 255.582 290.108"
           >

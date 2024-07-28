@@ -9,7 +9,6 @@ import maclab from "../../Assets/Projects/maclab.png";
 import snake from "../../Assets/Projects/snake.png";
 import minesweeper from "../../Assets/Projects/minesweeper.png";
 
-
 function Projects() {
   return (
     <Container fluid className="project-section">
@@ -26,8 +25,8 @@ function Projects() {
             <ProjectCard
               imgPath={rentalCar}
               isBlog={false}
-              title="Car Rental Application"
-              description="Car Rental Application: Developed to simulate car rental operations. Built using ASP.NET, Entity Framework, Fluent API, Repository Design Pattern, Code First approach, and Autofac. The project includes a Web API for managing rental operations."
+              title="Car Rental"
+              description="Developed to simulate car rental operations. Built using ASP.NET, Entity Framework, Fluent API, Repository Design Pattern, Code First approach, and Autofac. The project includes a Web API for managing rental operations. Additionally, it features comprehensive customer management and vehicle tracking functionalities."
               ghLink="https://github.com/latifaltay/CarRental_BackEnd"
             />
           </Col>
