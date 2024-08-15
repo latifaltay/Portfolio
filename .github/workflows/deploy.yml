@@ -24,6 +24,9 @@ jobs:
         npm install
         npm run build
 
+    - name: List files in build directory
+      run: ls -la ./project-name/build/
+
     - name: Upload build to Plesk Server
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
