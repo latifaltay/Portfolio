@@ -20,12 +20,9 @@ jobs:
 
     - name: Install dependencies
       run: |
-        cd project-name
+        cd proje adı
         npm install
         npm run build
-
-    - name: List files in build directory
-      run: ls -la ./project-name/build/
 
     - name: Upload build to Plesk Server
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
@@ -37,4 +34,4 @@ jobs:
         server-dir: /latifaltay.com/
 
     - name: Clean up the build folder
-      run: rm -rf ./project-name/build/
+      run: rm -rf ./project-name/dist/
