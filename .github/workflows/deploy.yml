@@ -3,7 +3,7 @@ name: Deploy React Project to Plesk Server
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   deploy:
