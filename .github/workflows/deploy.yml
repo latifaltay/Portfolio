@@ -23,7 +23,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        cd Portfolio
+        cd src
         npm install
         npm run build
 
