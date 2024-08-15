@@ -24,15 +24,12 @@ jobs:
         npm install
         npm run build
 
-    - name: List files in build directory
-      run: ls -la ./project-name/build/
-
     - name: Upload build to Plesk Server
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
-        server: 94.73.147.91
-        username: u1876828
-        password: AnaninAmiGalatasaray1
+        server: ${{ secrets.PLESK_SERVER }}
+        username: ${{ secrets.PLESK_USERNAME }}
+        password: ${{ secrets.PLESK_PASSWORD }}
         local-dir: ./project-name/build/
         server-dir: /latifaltay.com/
 
