@@ -20,9 +20,12 @@ jobs:
 
     - name: Install dependencies
       run: |
-        cd proje adı
+        cd project-name
         npm install
         npm run build
+
+    - name: List files in build directory
+      run: ls -la ./project-name/build/
 
     - name: Upload build to Plesk Server
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
@@ -30,8 +33,8 @@ jobs:
         server: 94.73.147.91
         username: u1876828
         password: AnaninAmiGalatasaray1
-        local-dir: ./project-name/dist/
-        server-dir: ./httpdocs/
+        local-dir: ./project-name/build/
+        server-dir: /latifaltay.com/
 
     - name: Clean up the build folder
-      run: rm -rf ./project-name/dist/
+      run: rm -rf ./project-name/build/
