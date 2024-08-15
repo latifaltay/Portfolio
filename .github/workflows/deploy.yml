@@ -31,7 +31,7 @@ jobs:
         username: ${{ secrets.PLESK_USERNAME }}
         password: ${{ secrets.PLESK_PASSWORD }}
         local-dir: ./project-name/build/
-        server-dir: /httpdocs/
+        server-dir: /latifaltay.com/
 
     - name: Clean up the build folder
       run: rm -rf ./project-name/build/
