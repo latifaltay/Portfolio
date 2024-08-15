@@ -13,6 +13,9 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
+    - name: List directory contents
+      run: ls -la
+
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
@@ -20,7 +23,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        cd project-name
+        cd my-correct-project-directory
         npm install
         npm run build
 
@@ -30,8 +33,8 @@ jobs:
         server: ${{ secrets.PLESK_SERVER }}
         username: ${{ secrets.PLESK_USERNAME }}
         password: ${{ secrets.PLESK_PASSWORD }}
-        local-dir: ./project-name/build/
+        local-dir: ./my-correct-project-directory/build/
         server-dir: /latifaltay.com/
 
     - name: Clean up the build folder
-      run: rm -rf ./project-name/build/
+      run: rm -rf ./my-correct-project-directory/build/
