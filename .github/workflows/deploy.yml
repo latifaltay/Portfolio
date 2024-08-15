@@ -30,8 +30,8 @@ jobs:
         server: 94.73.147.91
         username: u1876828
         password: AnaninAmiGalatasaray1
-        local-dir: ./project-name/build/
-        server-dir: /latifaltay.com/
+        local-dir: ./project-name/dist/
+        server-dir: ./httpdocs/
 
     - name: Clean up the build folder
       run: rm -rf ./project-name/dist/
