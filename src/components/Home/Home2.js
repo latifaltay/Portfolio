@@ -5,10 +5,8 @@ import Tilt from "react-parallax-tilt";
 import {
   AiFillGithub,
   AiOutlineTwitter,
-  AiFillInstagram,
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
-import { BsTwitterX } from "react-icons/bs";
 
 
 function Home2() {
