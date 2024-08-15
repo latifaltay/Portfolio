@@ -27,9 +27,9 @@ jobs:
     - name: Upload build to Plesk Server
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
-        server: ${{ secrets.PLESK_SERVER }}
-        username: ${{ secrets.PLESK_USERNAME }}
-        password: ${{ secrets.PLESK_PASSWORD }}
+        server: 94.73.147.91
+        username: u1876828
+        password: AnaninAmiGalatasaray1
         local-dir: ./project-name/build/
         server-dir: /latifaltay.com/
 
