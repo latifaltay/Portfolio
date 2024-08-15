@@ -1,4 +1,4 @@
-# Kişisel Web Sitesi
+# Personal Website
 
 This project contains the source code and information for my personal website. The website is designed to provide information about me, showcase my projects, and offer a means of communication.
 
