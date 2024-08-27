@@ -37,7 +37,7 @@ function Home() {
 
         // Bilgileri sunucuya gönder
         try {
-            const response = await fetch('https://api.latifaltay.com/logUserInfo', {
+            const response = await fetch('https://api.latifaltay.com/logUserInfo.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
