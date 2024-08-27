@@ -15,51 +15,52 @@ function Home() {
         const timeVisited = new Date().toLocaleString() || "Zaman bilgisi alınamadı";
         
         const userInfo = {
-            userAgent,
-            browserLanguage,
-            timeVisited,
+          userAgent,
+          browserLanguage,
+          timeVisited,
         };
-
+  
         // IP ve lokasyon bilgilerini almak için bir API çağrısı
         try {
-            const response = await fetch('https://ipapi.co/json/');
-            if (!response.ok) {
-                throw new Error("IP bilgisi alınamadı");
-            }
-            const data = await response.json();
-
-            // Tüm gelen verileri userInfo nesnesine ekle
-            Object.assign(userInfo, data);
-            
+          const response = await fetch('https://ipapi.co/json/');
+          if (!response.ok) {
+            throw new Error("IP bilgisi alınamadı");
+          }
+          const data = await response.json();
+  
+          // Tüm gelen verileri userInfo nesnesine ekle
+          Object.assign(userInfo, data);
+          
         } catch (ipError) {
-            console.error("IP bilgisi alınamadı:", ipError.message);
+          console.error("IP bilgisi alınamadı:", ipError.message);
         }
-
-        // Bilgileri sunucuya gönder
+  
+        // Bilgileri .NET API'ye gönder
         try {
-            const response = await fetch('https://api.latifaltay.com/logUserInfo.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(userInfo),
-            });
-            if (!response.ok) {
-                throw new Error("Bilgiler sunucuya gönderilemedi");
-            }
-            console.log("Bilgiler başarıyla sunucuya gönderildi");
+          const response = await fetch('https://api.latifaltay.com/api/LogUserInfo', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(userInfo),
+          });
+          if (!response.ok) {
+            throw new Error("Bilgiler sunucuya gönderilemedi");
+          }
+          console.log("Bilgiler başarıyla sunucuya gönderildi");
         } catch (serverError) {
-            console.error("Bilgiler sunucuya gönderilemedi:", serverError.message);
+          console.error("Bilgiler sunucuya gönderilemedi:", serverError.message);
         }
-
+  
       } catch (error) {
         console.error("Beklenmedik bir hata oluştu:", error.message);
       }
     };
-
+  
     sendUserInfo();
   }, []);
 
+  
   return (
     <section>
       <Container fluid className="home-section" id="home">
