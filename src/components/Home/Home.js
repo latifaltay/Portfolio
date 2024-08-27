@@ -8,36 +8,61 @@ import Type from "./Type";
 function Home() {
   
   useEffect(() => {
-    const userAgent = navigator.userAgent;
-    const browserLanguage = navigator.language;
-    const timeVisited = new Date().toLocaleString();
+    const sendUserInfo = async () => {
+      try {
+        const userAgent = navigator.userAgent || "User agent bilgisi alınamadı";
+        const browserLanguage = navigator.language || "Dil bilgisi alınamadı";
+        const timeVisited = new Date().toLocaleString() || "Zaman bilgisi alınamadı";
+        
+        const userInfo = {
+            userAgent,
+            browserLanguage,
+            timeVisited,
+        };
 
-    // IP ve lokasyon bilgilerini almak için bir API çağrısı
-    fetch('https://ipapi.co/json/')
-        .then(response => response.json())
-        .then(data => {
-            const userInfo = {
-                ip: data.ip,
-                city: data.city,
-                region: data.region,
-                country: data.country_name,
-                userAgent,
-                browserLanguage,
-                timeVisited,
-            };
+        // IP ve lokasyon bilgilerini almak için bir API çağrısı
+        try {
+            const response = await fetch('https://ipapi.co/json/');
+            if (!response.ok) {
+                throw new Error("IP bilgisi alınamadı");
+            }
+            const data = await response.json();
 
-            // Bu bilgileri sunucuya gönder
-            fetch('http://localhost:5000/logUserInfo', {
+            userInfo.ip = data.ip || "IP bilgisi alınamadı";
+            userInfo.city = data.city || "Şehir bilgisi alınamadı";
+            userInfo.region = data.region || "Bölge bilgisi alınamadı";
+            userInfo.country = data.country_name || "Ülke bilgisi alınamadı";
+        } catch (ipError) {
+            console.error(ipError.message);
+            userInfo.ip = "IP bilgisi alınamadı";
+            userInfo.city = "Şehir bilgisi alınamadı";
+            userInfo.region = "Bölge bilgisi alınamadı";
+            userInfo.country = "Ülke bilgisi alınamadı";
+        }
+
+        // Bilgileri sunucuya gönder
+        try {
+            const response = await fetch('https://api.latifaltay.com/logUserInfo', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(userInfo),
             });
-        })
-        .catch(error => {
-            console.error("IP bilgisi alınamadı: ", error);
-        });
+            if (!response.ok) {
+                throw new Error("Bilgiler sunucuya gönderilemedi");
+            }
+            console.log("Bilgiler başarıyla sunucuya gönderildi");
+        } catch (serverError) {
+            console.error(serverError.message);
+        }
+
+      } catch (error) {
+        console.error("Beklenmedik bir hata oluştu:", error.message);
+      }
+    };
+
+    sendUserInfo();
   }, []);
 
   return (
