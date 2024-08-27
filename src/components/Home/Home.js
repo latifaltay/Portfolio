@@ -37,7 +37,7 @@ function Home() {
   
         // Bilgileri .NET API'ye gönder
         try {
-          const response = await fetch('https://api.latifaltay.com/api/LogUserInfo', {
+          const response = await fetch('http://localhost/api/LogUserInfo', { // Burada localhost kullanıyoruz
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
