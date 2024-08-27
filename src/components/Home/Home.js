@@ -28,16 +28,11 @@ function Home() {
             }
             const data = await response.json();
 
-            userInfo.ip = data.ip || "IP bilgisi alınamadı";
-            userInfo.city = data.city || "Şehir bilgisi alınamadı";
-            userInfo.region = data.region || "Bölge bilgisi alınamadı";
-            userInfo.country = data.country_name || "Ülke bilgisi alınamadı";
+            // Tüm gelen verileri userInfo nesnesine ekle
+            Object.assign(userInfo, data);
+            
         } catch (ipError) {
-            console.error(ipError.message);
-            userInfo.ip = "IP bilgisi alınamadı";
-            userInfo.city = "Şehir bilgisi alınamadı";
-            userInfo.region = "Bölge bilgisi alınamadı";
-            userInfo.country = "Ülke bilgisi alınamadı";
+            console.error("IP bilgisi alınamadı:", ipError.message);
         }
 
         // Bilgileri sunucuya gönder
@@ -54,7 +49,7 @@ function Home() {
             }
             console.log("Bilgiler başarıyla sunucuya gönderildi");
         } catch (serverError) {
-            console.error(serverError.message);
+            console.error("Bilgiler sunucuya gönderilemedi:", serverError.message);
         }
 
       } catch (error) {
