@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import homeLogo from "../../Assets/home-main.svg";
 import Particle from "../Particle";
@@ -6,6 +6,40 @@ import Home2 from "./Home2";
 import Type from "./Type";
 
 function Home() {
+  
+  useEffect(() => {
+    const userAgent = navigator.userAgent;
+    const browserLanguage = navigator.language;
+    const timeVisited = new Date().toLocaleString();
+
+    // IP ve lokasyon bilgilerini almak için bir API çağrısı
+    fetch('https://ipapi.co/json/')
+        .then(response => response.json())
+        .then(data => {
+            const userInfo = {
+                ip: data.ip,
+                city: data.city,
+                region: data.region,
+                country: data.country_name,
+                userAgent,
+                browserLanguage,
+                timeVisited,
+            };
+
+            // Bu bilgileri sunucuya gönder
+            fetch('http://localhost:5000/logUserInfo', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(userInfo),
+            });
+        })
+        .catch(error => {
+            console.error("IP bilgisi alınamadı: ", error);
+        });
+  }, []);
+
   return (
     <section>
       <Container fluid className="home-section" id="home">
