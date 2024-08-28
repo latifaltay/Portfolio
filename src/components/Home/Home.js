@@ -46,8 +46,6 @@ function Home() {
           });
           if (!response.ok) {
             throw new Error("Bilgiler sunucuya gönderilemedi");
-            console.log("Bilgiler Sunucuya Gönderilmedi")
-            console.log("*****************************************************************************************************************************************************")
           }
           console.log("Bilgiler başarıyla sunucuya gönderildi");
         } catch (serverError) {
