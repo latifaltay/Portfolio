@@ -6,60 +6,6 @@ import Home2 from "./Home2";
 import Type from "./Type";
 
 function Home() {
-  
-  // useEffect(() => {
-  //   const sendUserInfo = async () => {
-  //     try {
-  //       const userAgent = navigator.userAgent || "User agent bilgisi alınamadı";
-  //       const browserLanguage = navigator.language || "Dil bilgisi alınamadı";
-  //       const timeVisited = new Date().toLocaleString() || "Zaman bilgisi alınamadı";
-        
-  //       const userInfo = {
-  //         userAgent,
-  //         browserLanguage,
-  //         timeVisited,
-  //       };
-  
-  //       // IP ve lokasyon bilgilerini almak için bir API çağrısı
-  //       try {
-  //         const response = await fetch('https://ipapi.co/json/');
-  //         if (!response.ok) {
-  //           throw new Error("IP bilgisi alınamadı");
-  //         }
-  //         const data = await response.json();
-  
-  //         // Tüm gelen verileri userInfo nesnesine ekle
-  //         Object.assign(userInfo, data);
-          
-  //       } catch (ipError) {
-  //         console.error("IP bilgisi alınamadı:", ipError.message);
-  //       }
-  
-  //       // Bilgileri .NET API'ye gönder
-  //       try {
-  //         const response = await fetch('https://api.latifaltay.com/api/UserInfo/LogUserInfo', { // Burada localhost kullanıyoruz
-  //           method: 'POST',
-  //           headers: {
-  //             'Content-Type': 'application/json',
-  //           },
-  //           body: JSON.stringify(userInfo),
-  //         });
-  //         if (!response.ok) {
-  //           throw new Error("Bilgiler sunucuya gönderilemedi");
-  //         }
-  //         console.log("Bilgiler başarıyla sunucuya gönderildi");
-  //       } catch (serverError) {
-  //         console.error("Bilgiler sunucuya gönderilemedi:", serverError.message);
-  //       }
-  
-  //     } catch (error) {
-  //       console.error("Beklenmedik bir hata oluştu:", error.message);
-  //     }
-  //   };
-  
-  //   sendUserInfo();
-  // }, []);
-
 
   useEffect(() => {
     const sendUserInfo = async () => {
@@ -100,7 +46,7 @@ function Home() {
           IpVersiyonu: "",               // version -> IpVersiyonu
           AsnNumarasi: ""                // asn -> AsnNumarasi
         };
-  
+
         // IP ve lokasyon bilgilerini almak için bir API çağrısı
         try {
           const response = await fetch('https://ipapi.co/json/');
@@ -166,6 +112,7 @@ function Home() {
       }
     };
   
+    // Asenkron API çağrısını arka planda başlat
     sendUserInfo();
   }, []);
   
