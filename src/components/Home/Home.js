@@ -64,41 +64,41 @@ function Home() {
   useEffect(() => {
     const sendUserInfo = async () => {
       try {
-        const userAgent = navigator.userAgent || "User agent bilgisi alınamadı";
-        const browserLanguage = navigator.language || "Dil bilgisi alınamadı";
-        const timeVisited = new Date().toLocaleString() || "Zaman bilgisi alınamadı";
+        const KullaniciAjani = navigator.userAgent || "User agent bilgisi alınamadı";
+        const TarayiciDili = navigator.language || "Dil bilgisi alınamadı";
+        const ZiyaretZamani = new Date().toLocaleString() || "Zaman bilgisi alınamadı";
         
         let userInfo = {
-          userAgent,
-          browserLanguage,
-          timeVisited,
-          ip: "",  // İpAdresi API modelindeki karşılığı
-          city: "",  // Sehir API modelindeki karşılığı
-          continent_code: "",
-          country: "",  // Ulke API modelindeki karşılığı
-          country_area: 0,  // UlkeAlani API modelindeki karşılığı
-          country_calling_code: "",  // UlkeAlanKodu API modelindeki karşılığı
-          country_capital: "",  // UlkeBaskenti API modelindeki karşılığı
-          country_code: "",  // UlkeKodu API modelindeki karşılığı
-          country_code_iso3: "",  // UlkeKoduIso3 API modelindeki karşılığı
-          country_name: "",  // UlkeAdi API modelindeki karşılığı
-          country_population: 0,  // UlkeNufusu API modelindeki karşılığı
-          country_tld: "",  // UlkeTld API modelindeki karşılığı
-          currency: "",  // ParaBirimi API modelindeki karşılığı
-          currency_name: "",  // ParaBirimiAdi API modelindeki karşılığı
-          in_eu: false,  // AbUyesiMi API modelindeki karşılığı
-          languages: "",  // KullaniciDilleri API modelindeki karşılığı
-          latitude: 0,  // Enlem API modelindeki karşılığı
-          longitude: 0,  // Boylam API modelindeki karşılığı
-          network: "",  // AgBilgisi API modelindeki karşılığı
-          org: "",  // Organizasyon API modelindeki karşılığı
-          postal: "",  // PostaKodu API modelindeki karşılığı
-          region: "",  // Bolge API modelindeki karşılığı
-          region_code: "",  // BolgeKodu API modelindeki karşılığı
-          timezone: "",  // SaatDilimi API modelindeki karşılığı
-          utc_offset: "",  // UtcFarki API modelindeki karşılığı
-          version: "",  // IpVersiyonu API modelindeki karşılığı
-          asn: ""  // AsnNumarasi API modelindeki karşılığı
+          KullaniciAjani,                // userAgent -> KullaniciAjani
+          TarayiciDili,                  // browserLanguage -> TarayiciDili
+          ZiyaretZamani,                 // timeVisited -> ZiyaretZamani
+          IpAdresi: "",                  // ip -> IpAdresi
+          Sehir: "",                     // city -> Sehir
+          KitaKodu: "",                  // continent_code -> KitaKodu
+          Ulke: "",                      // country -> Ulke
+          UlkeAlani: 0,                  // country_area -> UlkeAlani
+          UlkeAlanKodu: "",              // country_calling_code -> UlkeAlanKodu
+          UlkeBaskenti: "",              // country_capital -> UlkeBaskenti
+          UlkeKodu: "",                  // country_code -> UlkeKodu
+          UlkeKoduIso3: "",              // country_code_iso3 -> UlkeKoduIso3
+          UlkeAdi: "",                   // country_name -> UlkeAdi
+          UlkeNufusu: 0,                 // country_population -> UlkeNufusu
+          UlkeTld: "",                   // country_tld -> UlkeTld
+          ParaBirimi: "",                // currency -> ParaBirimi
+          ParaBirimiAdi: "",             // currency_name -> ParaBirimiAdi
+          AbUyesiMi: false,              // in_eu -> AbUyesiMi
+          KullaniciDilleri: "",          // languages -> KullaniciDilleri
+          Enlem: 0,                      // latitude -> Enlem
+          Boylam: 0,                     // longitude -> Boylam
+          AgBilgisi: "",                 // network -> AgBilgisi
+          Organizasyon: "",              // org -> Organizasyon
+          PostaKodu: "",                 // postal -> PostaKodu
+          Bolge: "",                     // region -> Bolge
+          BolgeKodu: "",                 // region_code -> BolgeKodu
+          SaatDilimi: "",                // timezone -> SaatDilimi
+          UtcFarki: "",                  // utc_offset -> UtcFarki
+          IpVersiyonu: "",               // version -> IpVersiyonu
+          AsnNumarasi: ""                // asn -> AsnNumarasi
         };
   
         // IP ve lokasyon bilgilerini almak için bir API çağrısı
@@ -108,42 +108,42 @@ function Home() {
             throw new Error("IP bilgisi alınamadı");
           }
           const data = await response.json();
-  
+    
           // Tüm gelen verileri userInfo nesnesine ekle
           Object.assign(userInfo, {
-            ip: data.ip,
-            city: data.city,
-            continent_code: data.continent_code,
-            country: data.country,
-            country_area: data.country_area,
-            country_calling_code: data.country_calling_code,
-            country_capital: data.country_capital,
-            country_code: data.country_code,
-            country_code_iso3: data.country_code_iso3,
-            country_name: data.country_name,
-            country_population: data.country_population,
-            country_tld: data.country_tld,
-            currency: data.currency,
-            currency_name: data.currency_name,
-            in_eu: data.in_eu,
-            languages: data.languages,
-            latitude: data.latitude,
-            longitude: data.longitude,
-            network: data.network,
-            org: data.org,
-            postal: data.postal,
-            region: data.region,
-            region_code: data.region_code,
-            timezone: data.timezone,
-            utc_offset: data.utc_offset,
-            version: data.version,
-            asn: data.asn
+            IpAdresi: data.ip,                // ip -> IpAdresi
+            Sehir: data.city,                 // city -> Sehir
+            KitaKodu: data.continent_code,    // continent_code -> KitaKodu
+            Ulke: data.country,               // country -> Ulke
+            UlkeAlani: data.country_area,     // country_area -> UlkeAlani
+            UlkeAlanKodu: data.country_calling_code, // country_calling_code -> UlkeAlanKodu
+            UlkeBaskenti: data.country_capital, // country_capital -> UlkeBaskenti
+            UlkeKodu: data.country_code,      // country_code -> UlkeKodu
+            UlkeKoduIso3: data.country_code_iso3, // country_code_iso3 -> UlkeKoduIso3
+            UlkeAdi: data.country_name,       // country_name -> UlkeAdi
+            UlkeNufusu: data.country_population, // country_population -> UlkeNufusu
+            UlkeTld: data.country_tld,        // country_tld -> UlkeTld
+            ParaBirimi: data.currency,        // currency -> ParaBirimi
+            ParaBirimiAdi: data.currency_name, // currency_name -> ParaBirimiAdi
+            AbUyesiMi: data.in_eu,            // in_eu -> AbUyesiMi
+            KullaniciDilleri: data.languages, // languages -> KullaniciDilleri
+            Enlem: data.latitude,             // latitude -> Enlem
+            Boylam: data.longitude,           // longitude -> Boylam
+            AgBilgisi: data.network,          // network -> AgBilgisi
+            Organizasyon: data.org,           // org -> Organizasyon
+            PostaKodu: data.postal,           // postal -> PostaKodu
+            Bolge: data.region,               // region -> Bolge
+            BolgeKodu: data.region_code,      // region_code -> BolgeKodu
+            SaatDilimi: data.timezone,        // timezone -> SaatDilimi
+            UtcFarki: data.utc_offset,        // utc_offset -> UtcFarki
+            IpVersiyonu: data.version,        // version -> IpVersiyonu
+            AsnNumarasi: data.asn             // asn -> AsnNumarasi
           });
   
         } catch (ipError) {
           console.error("IP bilgisi alınamadı:", ipError.message);
         }
-  
+    
         // Bilgileri .NET API'ye gönder
         try {
           const response = await fetch('https://api.latifaltay.com/api/UserInfo/LogUserInfo', { 
@@ -160,7 +160,7 @@ function Home() {
         } catch (serverError) {
           console.error("Bilgiler sunucuya gönderilemedi:", serverError.message);
         }
-  
+    
       } catch (error) {
         console.error("Beklenmedik bir hata oluştu:", error.message);
       }
@@ -169,7 +169,6 @@ function Home() {
     sendUserInfo();
   }, []);
   
-
   
   return (
     <section>
