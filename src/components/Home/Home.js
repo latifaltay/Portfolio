@@ -60,7 +60,7 @@ function Home() {
   //   sendUserInfo();
   // }, []);
 
-  
+
   useEffect(() => {
     const sendUserInfo = async () => {
       try {
@@ -72,34 +72,33 @@ function Home() {
           userAgent,
           browserLanguage,
           timeVisited,
-          // Varsayılan değerleri ekleyelim
-          ip: "",
-          city: "",
+          ip: "",  // İpAdresi API modelindeki karşılığı
+          city: "",  // Sehir API modelindeki karşılığı
           continent_code: "",
-          country: "",
-          country_area: 0,
-          country_calling_code: "",
-          country_capital: "",
-          country_code: "",
-          country_code_iso3: "",
-          country_name: "",
-          country_population: 0,
-          country_tld: "",
-          currency: "",
-          currency_name: "",
-          in_eu: false,
-          languages: "",
-          latitude: 0,
-          longitude: 0,
-          network: "",
-          org: "",
-          postal: "",
-          region: "",
-          region_code: "",
-          timezone: "",
-          utc_offset: "",
-          version: "",
-          asn: ""
+          country: "",  // Ulke API modelindeki karşılığı
+          country_area: 0,  // UlkeAlani API modelindeki karşılığı
+          country_calling_code: "",  // UlkeAlanKodu API modelindeki karşılığı
+          country_capital: "",  // UlkeBaskenti API modelindeki karşılığı
+          country_code: "",  // UlkeKodu API modelindeki karşılığı
+          country_code_iso3: "",  // UlkeKoduIso3 API modelindeki karşılığı
+          country_name: "",  // UlkeAdi API modelindeki karşılığı
+          country_population: 0,  // UlkeNufusu API modelindeki karşılığı
+          country_tld: "",  // UlkeTld API modelindeki karşılığı
+          currency: "",  // ParaBirimi API modelindeki karşılığı
+          currency_name: "",  // ParaBirimiAdi API modelindeki karşılığı
+          in_eu: false,  // AbUyesiMi API modelindeki karşılığı
+          languages: "",  // KullaniciDilleri API modelindeki karşılığı
+          latitude: 0,  // Enlem API modelindeki karşılığı
+          longitude: 0,  // Boylam API modelindeki karşılığı
+          network: "",  // AgBilgisi API modelindeki karşılığı
+          org: "",  // Organizasyon API modelindeki karşılığı
+          postal: "",  // PostaKodu API modelindeki karşılığı
+          region: "",  // Bolge API modelindeki karşılığı
+          region_code: "",  // BolgeKodu API modelindeki karşılığı
+          timezone: "",  // SaatDilimi API modelindeki karşılığı
+          utc_offset: "",  // UtcFarki API modelindeki karşılığı
+          version: "",  // IpVersiyonu API modelindeki karşılığı
+          asn: ""  // AsnNumarasi API modelindeki karşılığı
         };
   
         // IP ve lokasyon bilgilerini almak için bir API çağrısı
@@ -169,6 +168,7 @@ function Home() {
   
     sendUserInfo();
   }, []);
+  
 
   
   return (
