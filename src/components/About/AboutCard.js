@@ -7,17 +7,17 @@ function AboutCard() {
     <Card className="quote-card-view">
       <Card.Body>
         <blockquote className="blockquote mb-0">
-          <p style={{ textAlign: "justify" }}>
-            Hi Everyone, I am <span className="purple"> Latif Altay </span>
-            from <span className="purple"> Istanbul, Turkey</span>
-            <br />
-            I am currently employed as a software developer at a corporate company.
-            <br />
-            I completed my undergraduate studies in Management Information Systems at Anadolu University and my associate degree in Computer Programming at Mehmet Akif Ersoy University.
-            <br />
-            <br />
-            Apart from coding, some other activities that I love to do!
-          </p>
+        <p style={{ textAlign: "justify" }}>
+  Hi, I am <span className="purple">Latif Altay</span> from <span className="purple">Istanbul, Turkey</span>.
+  <br />
+  I am a software developer at Pegasus Airlines through Nexum, focusing on building scalable, maintainable, and high-performance backend applications. 
+  <br />
+  I work extensively with <span className="purple">ASP.NET Core, C#, Entity Framework Core, Dapper, Clean Architecture, Onion Architecture, N-Tier Architecture, CQRS, MediatR, Generic Repository & Unit of Work, Redis, RabbitMQ, PostgreSQL, and Docker</span>.
+  <br />
+  I am passionate about designing robust software architectures, improving application performance, and continuously learning modern backend development practices.
+</p>
+
+
           <ul>
             <li className="about-activity">
               <ImPointRight /> Cyber Security
