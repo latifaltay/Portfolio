@@ -7,6 +7,7 @@ import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
 
+// PDF.js worker ayarı
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   "pdfjs-dist/build/pdf.worker.min.js",
   import.meta.url
@@ -24,15 +25,19 @@ function ResumeNew() {
     setNumPages(numPages);
   };
 
+  // PDF path: public/Latif_Altay.pdf
+  const pdfPath = `${process.env.PUBLIC_URL}/Latif_Altay.pdf`;
+
   return (
     <div>
       <Container fluid className="resume-section">
         <Particle />
 
+        {/* Download button üst */}
         <Row style={{ justifyContent: "center", position: "relative" }}>
           <Button
             variant="primary"
-            href="/Latif_Altay.pdf"
+            href={pdfPath}
             target="_blank"
             style={{ maxWidth: "250px" }}
           >
@@ -43,8 +48,9 @@ function ResumeNew() {
 
         <br />
 
+        {/* PDF görüntüleme */}
         <Document
-          file="/Latif_Altay.pdf"
+          file={pdfPath}
           onLoadSuccess={onDocumentLoadSuccess}
           className="d-flex flex-column align-items-center"
         >
@@ -58,10 +64,11 @@ function ResumeNew() {
           ))}
         </Document>
 
+        {/* Download button alt */}
         <Row style={{ justifyContent: "center", position: "relative" }}>
           <Button
             variant="primary"
-            href="/Latif_Altay.pdf"
+            href={pdfPath}
             target="_blank"
             style={{ maxWidth: "250px" }}
           >
