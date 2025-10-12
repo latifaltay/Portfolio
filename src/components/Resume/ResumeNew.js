@@ -2,15 +2,14 @@ import React, { useState, useEffect } from "react";
 import { Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
-import pdf from "../../Assets/../Assets/Latif_Altay.pdf";
 import { AiOutlineDownload } from "react-icons/ai";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  'pdfjs-dist/build/pdf.worker.min.js',
-  import.meta.url,
+  "pdfjs-dist/build/pdf.worker.min.js",
+  import.meta.url
 ).toString();
 
 function ResumeNew() {
@@ -29,10 +28,11 @@ function ResumeNew() {
     <div>
       <Container fluid className="resume-section">
         <Particle />
+
         <Row style={{ justifyContent: "center", position: "relative" }}>
           <Button
             variant="primary"
-            href={pdf}
+            href="/Latif_Altay.pdf"
             target="_blank"
             style={{ maxWidth: "250px" }}
           >
@@ -40,9 +40,11 @@ function ResumeNew() {
             &nbsp;Download CV
           </Button>
         </Row>
-        <br/>
+
+        <br />
+
         <Document
-          file={pdf}
+          file="/Latif_Altay.pdf"
           onLoadSuccess={onDocumentLoadSuccess}
           className="d-flex flex-column align-items-center"
         >
@@ -59,7 +61,7 @@ function ResumeNew() {
         <Row style={{ justifyContent: "center", position: "relative" }}>
           <Button
             variant="primary"
-            href={pdf}
+            href="/Latif_Altay.pdf"
             target="_blank"
             style={{ maxWidth: "250px" }}
           >
