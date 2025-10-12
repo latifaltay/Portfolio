@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.f851f134.css",
+    "main.js": "/static/js/main.453833fa.js",
+    "static/js/488.800d5210.chunk.js": "/static/js/488.800d5210.chunk.js",
+    "static/media/pdf.worker.min.js": "/static/media/pdf.worker.min.f6004d824e5dbf339c6c.js",
+    "static/media/home-main.svg": "/static/media/home-main.359935c39288e92d4dba5c9f2445b91d.svg",
+    "static/media/about.png": "/static/media/about.aee0f771fbfc1e7b8fa8.png",
+    "static/media/Latif_Altay.pdf": "/static/media/Latif_Altay.9ef8457ccd922792ea54.pdf",
+    "static/media/snake.png": "/static/media/snake.6a5e894fd73846bdd437.png",
+    "static/media/rentalCar.png": "/static/media/rentalCar.14106522c14f63608881.png",
+    "static/media/home-bg.jpg": "/static/media/home-bg.dc52d5d40a40b13154b0.jpg",
+    "static/media/maclab.png": "/static/media/maclab.e859e194e8432c61917d.png",
+    "static/media/eCommerce.png": "/static/media/eCommerce.9e09ce5df5f6cb2c02ce.png",
+    "static/media/minesweeper.png": "/static/media/minesweeper.7e89c074bd5952b0e0dd.png",
+    "static/media/northwind.png": "/static/media/northwind.9c326357a7f1e8479bfa.png",
+    "static/media/avatar.svg": "/static/media/avatar.7f806e40d46fc76fbc3c4a3d71349951.svg",
+    "index.html": "/index.html",
+    "static/media/pre.svg": "/static/media/pre.4410c5baaa673cc131da.svg",
+    "main.f851f134.css.map": "/static/css/main.f851f134.css.map",
+    "main.453833fa.js.map": "/static/js/main.453833fa.js.map",
+    "488.800d5210.chunk.js.map": "/static/js/488.800d5210.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f851f134.css",
+    "static/js/main.453833fa.js"
+  ]
+}
